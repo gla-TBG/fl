@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <title>烽浪新闻</title>
+
+    <!-- 添加manifest文件 -->
+    <link rel="manifest" href="/static/manifest.json">
   </head>
   <style type="text/css">
     #Loading {
@@ -19,25 +22,25 @@
       50% {
         opacity: 0.2;
         -webkit-transform: scale(0.75);
-        transform: scale(0.75); 
+        transform: scale(0.75);
       }
       100% {
         opacity: 1;
         -webkit-transform: scale(1);
-        transform: scale(1); 
-      } 
+        transform: scale(1);
+      }
     }
     @keyframes ball-beat {
       50% {
         opacity: 0.2;
         -webkit-transform: scale(0.75);
-        transform: scale(0.75); 
+        transform: scale(0.75);
       }
       100% {
         opacity: 1;
         -webkit-transform: scale(1);
-        transform: scale(1); 
-      } 
+        transform: scale(1);
+      }
     }
     .ball-beat > div {
       background-color: #279fcf;
@@ -49,15 +52,18 @@
       animation-fill-mode: both;
       display: inline-block;
       -webkit-animation: ball-beat 0.7s 0s infinite linear;
-      animation: ball-beat 0.7s 0s infinite linear; 
+      animation: ball-beat 0.7s 0s infinite linear;
     }
     .ball-beat > div:nth-child(2n-1) {
       -webkit-animation-delay: 0.35s !important;
-      animation-delay: 0.35s !important; 
+      animation-delay: 0.35s !important;
     }
   </style>
-
+  <script src=<%= htmlWebpackPlugin.options.path %>/tinymce4.7.5/tinymce.min.js></script>
   <body>
+    <!-- 注册service-worker.js -->
+    <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+
     <div id="Loading">
       <div class="loader-inner ball-beat">
         <div></div>

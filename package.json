@@ -16,6 +16,7 @@
     "js-md5": "^0.7.3",
     "lodash": "^4.17.10",
     "npm": "^6.1.0",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "vue": "^2.5.2",
     "vue-ajax-upload": "^0.1.7",
     "vue-quill-editor": "^3.0.6",
